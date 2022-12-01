@@ -1,0 +1,126 @@
+.pop-up {
+    display: block;
+    position: absolute;
+    top: 167.5px;
+    left: 519px;
+    width: 550px;
+    border-radius: 10px;
+    background-color: #fff;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 100px 0 rgba(0, 0, 0, 0.19);
+}
+
+.pop-up-header {
+    height: 45px;
+    background-color: #f1f3f4;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.menu-pop-up {
+    display: inline-block;
+    margin: 2px 4px;
+    padding: 15px;
+    vertical-align: middle;
+    height: 34px;
+    width: 469px;
+    margin-left: 15px;
+}
+
+.menu-pop-up div {
+    width: 16px;
+    height: 2px;
+    background-color: #5f6368;
+    margin: 2px 0;
+}
+
+.cross {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    position: relative;
+    top: -7px;
+}
+
+.add-title {
+    height: 69px;
+}
+
+#add-title {
+    color: #70757a;
+    width: 399px;
+    font-size: 27.5px;
+    letter-spacing: .5px;
+    margin-left: 85px;
+    margin-top: 30px;
+    outline: none;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+}
+
+#add-title:active {
+    border-color: transparent;
+    border-bottom: 2px solid #1c87c9;
+}
+
+.event-type {
+    margin-left: 85px;
+    margin-top: 15px;
+}
+
+.event-type button{
+    height: 36px;
+    color: #70757a;
+    font-size: 17.5px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.event-type button:active{
+    color: #1967d2;
+    background-color: #e8f0fe;
+}
+
+.clock-icon {
+    display: inline-block;
+    padding: 20px;
+    margin-left: 10px;
+}
+
+.day-date-time {
+    color: #3c4043;
+    font-size: 17.5px;
+    font-weight: 400;
+    padding-left: 10px;
+    display: inline-block;
+    vertical-align: super;
+}
+
+.pop-up-footer {
+    height: 60px;
+    border-top: 1.5px solid #dddddd;
+    text-align: right;
+    font-size: 16px;
+    letter-spacing: .5px;
+    font-weight: 500;
+    padding: 0px 19px;
+}
+
+.more-options {
+    color: #5f6368;
+    display: inline-block;
+    padding-right: 15px;
+}
+
+.pop-up-footer button {
+    display: inline-block;
+    color: #fff;
+    background-color: #1a73e8;
+    border-radius: 5px;
+    padding: 12.5px 27.5px;
+    margin-top: 8px;
+}

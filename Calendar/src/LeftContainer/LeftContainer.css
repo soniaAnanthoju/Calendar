@@ -1,0 +1,122 @@
+.scroll-bar {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 414px;
+}
+
+::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+    
+::-webkit-scrollbar-thumb {
+    background: #bdc1c6;
+    border-radius: 8px;
+}
+
+.left-container {
+    flex: 2;
+}
+
+.search-for-people {
+    width: 225px;
+    height: 36px;
+    color: #5f6368;
+    font: 400 16.5px Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    letter-spacing: .5px;
+    line-height: 24px;
+    background-color: #f1f3f4;
+    padding: 3px 12px;
+    margin: 26px 15px 5px 26px;
+    border-radius: 4px;
+}
+
+.search-for-people span {
+    position: relative;
+    top: 5px;
+    padding-left: 3px;
+}
+
+#search-for-people {
+    padding-left: 15px;
+    position: relative;
+    top: -1px;
+}
+
+.calendars {
+    padding: 25px 0 0 27px;
+}
+
+.my-calendar {
+    width: 250px;
+    height: 32px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+
+#my-calendar {
+    display: inline-block;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: .95px;
+    color: #3c4043;
+    width: 220px;
+}
+
+#other-calendar {
+    display: inline-block;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: .95px;
+    color: #3c4043;
+    width: 180px;
+}
+
+.my-calendar-icon {
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+.my-calendar-plus-icon {
+    width: 39px;
+    display: inline-block;
+}
+
+#my-calendar-icon {
+    vertical-align: middle;
+}
+
+.check-box {
+    height: 32px;
+    width: 52px;
+}
+
+#check-box {
+    margin-bottom: 12px;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+input[type=checkbox] {
+    height: 20px;
+    width: 20px;
+    outline: 1.5px solid #7986CB; 
+    accent-color: #7986CB;
+  }
+
+.login-name {
+    color: #3c4043;
+    font-size: 16.5px;
+    font-weight: 400;
+    padding-left: 12px;
+    letter-spacing: .5px;
+    vertical-align: super;
+}
+
+.terms-privacy {
+    color: #70757a;
+    font-size: 15px;
+    padding: 10px 0px;
+}

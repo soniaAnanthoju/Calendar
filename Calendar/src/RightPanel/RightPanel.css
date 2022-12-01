@@ -1,0 +1,29 @@
+.right-panel {
+    flex: 0.4;
+	border-left: 1px solid #dddddd;
+}
+
+.right-panel-icons {
+    border-bottom: 1px solid #dddddd;
+    margin: 22.5px 14.5px 22.5px 22.5px;
+}
+
+.icon img {
+    height: 24px;
+    width: 24px;
+    border-radius: 2.5px;
+    margin-bottom: 42.5px;
+}
+
+.right-panel-plus-icon {
+    margin: 40px 14.5px 40px 22.5px;
+}
+
+.right-panel-arrow-right-icon {
+    height: 38px;
+    width: 50px;
+    text-align: center;
+    padding-top: 12px;
+    margin-left: 8px;
+    margin-top: 95px;
+}
