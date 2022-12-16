@@ -30,7 +30,6 @@ function LeftContainer() {
         { calendarName: 'IV ECE A&B' },
         { calendarName: 'VIII SEM ECE (2019-20) B' }
     ];
-    console.log('my-calendar-icon' + (!isMyCalendarExpanded ? '.inValid' : ''));
 
     return (
         <div className='left-container'>

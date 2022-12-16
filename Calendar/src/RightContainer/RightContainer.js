@@ -10,7 +10,14 @@ function RightContainer() {
     const [timeOfEvent, setTimeOfEvent] = useState();
 
     const [active, setActive] = useState(false);
-  
+
+    const [eventTitle, setEventTitle] = useState([]);
+
+    function sendData(data) {
+        setEventTitle(data);
+        console.log('Title data: ', data);
+    }
+
     function createSunEventHandler(event) {
         setButtonPopup(true);
         setDayOfEvent("Sunday");
@@ -62,8 +69,7 @@ function RightContainer() {
     }
 
     const blocks = [];
-    var i = 1;
-    for (i = 1; i < 25; i++) {
+    for (let i = 1; i < 25; i++) {
         blocks.push(<div className='Time' key={i}>
             <div className='Time-gap'>{i}:00</div>
             <div className='Time-gap-seperation'></div>
@@ -79,6 +85,7 @@ function RightContainer() {
 
     return (
         <div className='right-container'>
+            {eventTitle}
             <main>
                 <div className='heading'>
                     <div className='heading-gap'></div>
@@ -127,7 +134,7 @@ function RightContainer() {
                     {blocks}
                 </div>
             </main>
-            <CreateEventPopup dayOfEvent={dayOfEvent} dateOfEvent={dateOfEvent} timeOfEvent={timeOfEvent} trigger={buttonPopup} setTrigger={setButtonPopup}></CreateEventPopup>
+            <CreateEventPopup sendData={sendData} dayOfEvent={dayOfEvent} dateOfEvent={dateOfEvent} timeOfEvent={timeOfEvent} trigger={buttonPopup} setTrigger={setButtonPopup}></CreateEventPopup>
         </div>
     );
 }
