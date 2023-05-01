@@ -97,7 +97,7 @@
     border-top: none;
 }
 
-.Time-event {
+.Time-event-block {
     font-size: 0px;
     width: 110px;
     height: 50px;
@@ -108,4 +108,26 @@
     border-right: none;
     margin: 0;
     padding: 0;
+}
+
+.Time-event {
+    display: inline-block;
+}
+
+.mapping {
+    position: relative;
+    top: -1224px;
+    left: 82px;
+}
+
+.Time-event-block-mapping {
+    font-size: 0px;
+    width: 109px;
+    height: 50px;
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid red;
+    margin: 0;
+    padding: 0;
+    color: black;
 }

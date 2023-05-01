@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 
 function CreateEventPopup(props) {
 
-    const [saveTitleOfEvent, setSaveTitleOfEvent] = useState([]);
-    const [titleOfEvent, setTitleOfEvent] = useState([]);
+    const [saveTitleOfEvent, setSaveTitleOfEvent] = useState();
+    const [titleOfEvent, setTitleOfEvent] = useState();
 
     let sendData = props.sendData;
 
@@ -25,7 +25,6 @@ function CreateEventPopup(props) {
     function saveTitleHandler(event) {
         setSaveTitleOfEvent(saveTitleOfEvent);
         setTitleOfEvent(saveTitleOfEvent);
-        console.log(titleOfEvent);
         setSaveTitleOfEvent('');
         props.setTrigger(false);
     }

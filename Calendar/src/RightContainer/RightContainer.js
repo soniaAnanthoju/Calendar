@@ -2,84 +2,103 @@ import CreateEventPopup from '../Popup/CreateEventPopup';
 import './RightContainer.css';
 import { useState } from 'react';
 
+var dayMappings = {
+    0: "Sunday",
+    1: "Monday",
+    2: "Tuesday",
+    3: "Wednesday",
+    4: "Thursday",
+    5: "Friday",
+    6: "Saturday",
+}
+
+// var eventDetailsData = [
+//     {
+//         title: "Learning Javascript",
+//         isItAllDay: false,
+//         day: "daily",
+//         date: null,
+//         // time: 7-8
+//         fromTime: new Date(2022, 11, 22, 7, 0, 0, 0),
+//         toTime: new Date(2022, 11, 22, 8, 0, 0, 0)
+//     },
+//     {
+//         title: "Grab A Job",
+//         isItAllDay: false,
+//         day: "Tuesday",
+//         date: new Date('2020-11-22'),
+//         // time: 16-18
+//         fromTime: new Date(2022, 11, 22, 16, 0, 0, 0),
+//         toTime: new Date(2022, 11, 22, 18, 0, 0, 0)
+//     },
+//     {
+//         title: "Guru Tegh Bahadur's Martyrdom Day",
+//         isItAllDay: true,
+//         day: "Thursday",
+//         date: new Date('2020-11-24'),
+//         // time: All day
+//         fromTime: null,
+//         toTime: null
+//     },
+// ]
+
+// var eventDetailsDataTest = [
+//     {
+//         title: "Learning Javascript",
+//         isItAllDay: false,
+//         day: "daily",
+//         date: null,
+//         // time: 7-8
+//         startTime: new Date(2022, 11, 22, 7, 0, 0, 0),
+//         numberOfDivisionsToFillAfter: 1
+//     },
+//     {
+//         title: "Grab A Job",
+//         isItAllDay: false,
+//         day: "Tuesday",
+//         date: new Date('2020-11-22'),
+//         // time: 16-18
+//         startTime: new Date(2022, 11, 22, 16, 0, 0, 0),
+//         numberOfDivisionsToFillAfter: 2
+//     },
+//     {
+//         title: "Guru Tegh Bahadur's Martyrdom Day",
+//         isItAllDay: true,
+//         day: "Thursday",
+//         date: new Date('2020-11-24'),
+//         // time: All day
+//         startTime: null,
+//         numberOfDivisionsToFillAfter: null
+//     },
+// ]
+
 function RightContainer() {
 
     const [buttonPopup, setButtonPopup] = useState(false);
-    const [dayOfEvent, setDayOfEvent] = useState();
-    const [dateOfEvent, setDateOfEvent] = useState();
     const [timeOfEvent, setTimeOfEvent] = useState();
-
-    const [active, setActive] = useState(false);
-
-    const [eventTitle, setEventTitle] = useState([]);
+    const [dayOfEvent, setDayOfEvent] = useState();
+    const [eventTitle, setEventTitle] = useState();
 
     function sendData(data) {
         setEventTitle(data);
-        console.log('Title data: ', data);
     }
 
-    function createSunEventHandler(event) {
+    function createEventHandler(event) {
         setButtonPopup(true);
-        setDayOfEvent("Sunday");
-        setDateOfEvent(20);
         setTimeOfEvent(event.target.getAttribute("time"));
-        setActive(!active);
+        setDayOfEvent(dayMappings[event.target.getAttribute("day")]);
     }
 
-    function createMonEventHandler(event) {
-        setButtonPopup(true);
-        setDayOfEvent("Monday");
-        setDateOfEvent(21);
-        setTimeOfEvent(event.target.getAttribute("time"));
-    }
-
-    function createTueEventHandler(event) {
-        setButtonPopup(true);
-        setDayOfEvent("Tuesday");
-        setDateOfEvent(22);
-        setTimeOfEvent(event.target.getAttribute("time"));
-    }
-
-    function createWedEventHandler(event) {
-        setButtonPopup(true);
-        setDayOfEvent("Wednesday");
-        setDateOfEvent(23);
-        setTimeOfEvent(event.target.getAttribute("time"));
-    }
-
-    function createThuEventHandler(event) {
-        setButtonPopup(true);
-        setDayOfEvent("Thursday");
-        setDateOfEvent(24);
-        setTimeOfEvent(event.target.getAttribute("time"));
-    }
-
-    function createFriEventHandler(event) {
-        setButtonPopup(true);
-        setDayOfEvent("Friday");
-        setDateOfEvent(25);
-        setTimeOfEvent(event.target.getAttribute("time"));
-    }
-
-    function createSatEventHandler(event) {
-        setButtonPopup(true);
-        setDayOfEvent("Saturday");
-        setDateOfEvent(26);
-        setTimeOfEvent(event.target.getAttribute("time"));
-    }
-
-    const blocks = [];
+    const timeBlock = [];
     for (let i = 1; i < 25; i++) {
-        blocks.push(<div className='Time' key={i}>
+        const individualBlock = [];
+        for (let j = 0; j < 7; j++) {
+            individualBlock.push(<div className='Time-event-block' onClick={createEventHandler} time={i} day={j}></div>)
+        }
+        timeBlock.push(<div className='Time' key={i}>
             <div className='Time-gap'>{i}:00</div>
             <div className='Time-gap-seperation'></div>
-            <div className='Time-event' time={i} onClick={createSunEventHandler}></div>
-            <div className='Time-event' time={i} onClick={createMonEventHandler}></div>
-            <div className='Time-event' time={i} onClick={createTueEventHandler}></div>
-            <div className='Time-event' time={i} onClick={createWedEventHandler}></div>
-            <div className='Time-event' time={i} onClick={createThuEventHandler}></div>
-            <div className='Time-event' time={i} onClick={createFriEventHandler}></div>
-            <div className='Time-event' time={i} onClick={createSatEventHandler}></div>
+            <div className='Time-event'>{individualBlock}</div>
         </div>);
     }
 
@@ -131,10 +150,16 @@ function RightContainer() {
                     <div className='GMT-event'></div>
                 </div>
                 <div className='time-scroll-bar'>
-                    {blocks}
+                    {timeBlock}
                 </div>
             </main>
-            <CreateEventPopup sendData={sendData} dayOfEvent={dayOfEvent} dateOfEvent={dateOfEvent} timeOfEvent={timeOfEvent} trigger={buttonPopup} setTrigger={setButtonPopup}></CreateEventPopup>
+            <CreateEventPopup
+                sendData={sendData}
+                timeOfEvent={timeOfEvent}
+                dayOfEvent={dayOfEvent}
+                trigger={buttonPopup}
+                setTrigger={setButtonPopup}>
+            </CreateEventPopup>
         </div>
     );
 }
